@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management System</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ===== SECTION: USER LOGIN PAGE TEMPLATE ===== -->
+    <div class="relative flex items-center justify-center min-h-screen" style="background-color: #fefeff;">
+        <img src="https://iili.io/K3uRjSV.png" alt="College Logo" class="absolute top-6 left-6 h-20 w-auto">
+        <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-2xl">
+            <div class="text-center">
+                 <svg class="mx-auto h-12 w-auto text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.483l.227.227.227-.227a5.625 5.625 0 018.414 0l.227.227.227-.227m0 0l3.182-3.182m-3.182 3.182l-3.182-3.182" />
+                </svg>
+                <h1 class="mt-4 text-3xl font-bold text-gray-900">Unlock Your Voice</h1>
+                <p class="text-gray-600 mt-2">Securely sign in to the platform</p>
+            </div>
+            <form class="space-y-6 mt-6">
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username / ID</label>
+                    <input type="text" id="username" name="username" required class="mt-1 block w-full px-4 py-3 bg-gray-50 text-gray-900 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 placeholder-gray-400" placeholder="Enter your username">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <div class="relative mt-1">
+                        <input type="password" id="password" name="password" required class="block w-full px-4 py-3 bg-gray-50 text-gray-900 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 placeholder-gray-400 pr-10" placeholder="Enter your password">
+                        <button type="button" class="absolute inset-y-0 right-0 px-3 flex items-center text-gray-400 hover:text-gray-600 toggle-password-visibility">
+                             <!-- Eye icon -->
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.432 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <!-- Eye-slashed icon (hidden by default) -->
+                            <svg class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.243 4.243L6.228 6.228" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ease-in-out transform hover:scale-105">
+                        Login
+                    </button>
+                </div>
+            </form>
+            <p class="text-center text-sm text-gray-600 mt-6">
+                Don't have an account? 
+                <a href="#signup-section" class="font-medium text-blue-600 hover:text-blue-500">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- ===== SECTION: USER SIGNUP - FORM TEMPLATE ===== -->
+    <div id="signup-section" class="relative flex items-center justify-center min-h-screen" style="background-color: #fefeff;">
+        <img src="https://iili.io/K3uRjSV.png" alt="College Logo" class="absolute top-6 left-6 h-20 w-auto">
+        <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-2xl">
+            <div class="text-center">
+                <h1 class="text-3xl font-bold text-gray-900">Create a Student Account</h1>
+                <p class="text-gray-600 mt-2">Please fill in the details below</p>
+            </div>
+            <form class="space-y-4 mt-6">
+                <div>
+                    <label for="signupName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="signupName" name="signupName" required class="mt-1 block w-full px-4 py-3 bg-gray-50 text-gray-900 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 placeholder-gray-400" placeholder="e.g., Jane Doe">
+                </div>
+                 <div>
+                    <label for="signupUsername" class="block text-sm font-medium text-gray-700">Username / ID</label>
+                    <input type="text" id="signupUsername" name="signupUsername" required class="mt-1 block w-full px-4 py-3 bg-gray-50 text-gray-900 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 placeholder-gray-400" placeholder="Choose a username">
+                </div>
+                <div>
+                    <label for="signupPassword" class="block text-sm font-medium text-gray-700">Password</label>
+                     <div class="relative mt-1">
+                        <input type="password" id="signupPassword" name="signupPassword" required class="block w-full px-4 py-3 bg-gray-50 text-gray-900 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 placeholder-gray-400 pr-10" placeholder="Create a secure password">
+                        <button type="button" class="absolute inset-y-0 right-0 px-3 flex items-center text-gray-400 hover:text-gray-600 toggle-password-visibility">
+                            <!-- Eye icon -->
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.432 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <!-- Eye-slashed icon (hidden by default) -->
+                            <svg class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.243 4.243L6.228 6.228" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                    <div class="relative mt-1">
+                        <input type="password" id="confirmPassword" name="confirmPassword" required class="block w-full px-4 py-3 bg-gray-50 text-gray-900 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 placeholder-gray-400 pr-10" placeholder="Confirm your password">
+                        <button type="button" class="absolute inset-y-0 right-0 px-3 flex items-center text-gray-400 hover:text-gray-600 toggle-password-visibility">
+                             <!-- Eye icon -->
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.432 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <!-- Eye-slashed icon (hidden by default) -->
+                            <svg class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.243 4.243L6.228 6.228" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ease-in-out transform hover:scale-105">
+                        Create Account
+                    </button>
+                </div>
+                 <p class="text-center text-sm text-gray-600 pt-2">
+                    Already have an account? 
+                    <a href="#" class="font-medium text-blue-600 hover:text-blue-500">Sign In</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    
+    <!-- ===== SECTION: ADMIN LOGIN PAGE TEMPLATE ===== -->
+    <div class="relative flex items-center justify-center min-h-screen" style="background-color: #fefeff;">
+        <img src="https://iili.io/K3uRjSV.png" alt="College Logo" class="absolute top-6 left-6 h-20 w-auto">
+        <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-2xl">
+            <div class="text-center">
+                <svg class="mx-auto h-12 w-auto text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                </svg>
+                <h1 class="mt-4 text-3xl font-bold text-gray-900">Admin Portal</h1>
+                <p class="text-gray-600 mt-2">Please sign in with administrator credentials</p>
+            </div>
+            <form class="space-y-6 mt-6">
+                <div>
+                    <label for="adminUsername" class="block text-sm font-medium text-gray-700">Admin Username</label>
+                    <input type="text" id="adminUsername" name="adminUsername" required class="mt-1 block w-full px-4 py-3 bg-gray-50 text-gray-900 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 placeholder-gray-400" placeholder="Enter your admin username">
+                </div>
+                <div>
+                    <label for="adminPassword" class="block text-sm font-medium text-gray-700">Admin Password</label>
+                    <div class="relative mt-1">
+                        <input type="password" id="adminPassword" name="adminPassword" required class="block w-full px-4 py-3 bg-gray-50 text-gray-900 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 placeholder-gray-400 pr-10" placeholder="Enter your admin password">
+                        <button type="button" class="absolute inset-y-0 right-0 px-3 flex items-center text-gray-400 hover:text-gray-600 toggle-password-visibility">
+                            <!-- Eye icon -->
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.432 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <!-- Eye-slashed icon (hidden by default) -->
+                            <svg class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.243 4.243L6.228 6.228" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ease-in-out transform hover:scale-105">
+                        Login as Admin
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ===== SECTION: MAIN APPLICATION TEMPLATE (FOR REGULAR USERS) ===== -->
+    <div style="background-color: #fefeff;">
+        <div class="container mx-auto p-4 sm:p-6 lg:p-8 relative">
+             <img src="https://iili.io/K3uRjSV.png" alt="College Logo" class="absolute top-6 left-6 h-20 w-auto">
+            <header class="text-center mb-8">
+                <h1 class="text-3xl sm:text-4xl font-bold text-blue-600">Complaint Management System</h1>
+                <p class="text-gray-600 mt-2">Submit and track complaints efficiently.</p>
+            </header>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg-col-span-1">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h2 class="text-2xl font-semibold mb-6 text-gray-800">Register a New Complaint</h2>
+                        <form>
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                    <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150" placeholder="e.g., John Doe">
+                                </div>
+                                <div>
+                                    <label for="division" class="block text-sm font-medium text-gray-700">Class and Division</label>
+                                    <input type="text" id="division" name="division" required class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150" placeholder="e.g., Grade 10 - A">
+                                </div>
+                                <div>
+                                    <label for="complaint" class="block text-sm font-medium text-gray-700">Your Complaint</label>
+                                    <textarea id="complaint" name="complaint" rows="5" required class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150" placeholder="Please describe your issue in detail..."></textarea>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 ease-in-out">
+                                    Submit Complaint
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-4 sm:mb-0">My Submitted Complaints</h2>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Division</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Complaint</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date & Time</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <!-- User-specific complaints would go here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ===== SECTION: ADMIN PANEL TEMPLATE ===== -->
+    <div style="background-color: #fefeff;">
+        <div class="container mx-auto p-4 sm:p-6 lg:p-8 relative">
+             <img src="https://iili.io/K3uRjSV.png" alt="College Logo" class="absolute top-6 left-6 h-20 w-auto">
+            <header class="text-center mb-8">
+                <h1 class="text-3xl sm:text-4xl font-bold text-blue-600">Admin Panel</h1>
+                <p class="text-gray-600 mt-2">Manage all submitted complaints.</p>
+            </header>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4 sm:mb-0">All Submitted Complaints</h2>
+                    <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-all duration-200 ease-in-out flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Download as PDF
+                    </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Division</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Complaint</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date & Time</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Alice Johnson</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Grade 8 - B</td>
+                                <td class="px-6 py-4 text-sm text-gray-500 max-w-xs truncate" title="The classroom projector is not working correctly. The image is blurry and flickers constantly.">The classroom projector is not working...</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-08-28 10:15:30</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Pending</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Bob Williams</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Grade 11 - C</td>
+                                <td class="px-6 py-4 text-sm text-gray-500 max-w-xs truncate" title="Water dispenser on the 2nd floor is leaking, creating a safety hazard.">Water dispenser on the 2nd floor is leaking...</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-08-27 14:05:00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Resolved</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Script to toggle password visibility
+        document.addEventListener('DOMContentLoaded', function () {
+            const togglePasswordButtons = document.querySelectorAll('.toggle-password-visibility');
+
+            togglePasswordButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const passwordInput = this.previousElementSibling;
+                    const isPassword = passwordInput.type === 'password';
+                    
+                    // Toggle input type
+                    passwordInput.type = isPassword ? 'text' : 'password';
+                    
+                    // Toggle eye icons
+                    const icons = this.querySelectorAll('svg');
+                    icons.forEach(icon => icon.classList.toggle('hidden'));
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
